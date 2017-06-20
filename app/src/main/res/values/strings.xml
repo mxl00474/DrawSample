@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DrawSample</string>
+    <string name="menu_saveImg">Save Image</string>
+    <string name="menu_flipImg">Flip Image</string>
+    <string name="menu_findContours">Find Contours</string>
+    <string name="menu_clearImg">Clear Image</string>
+    <string name="background_image">Background image</string>
+</resources>
