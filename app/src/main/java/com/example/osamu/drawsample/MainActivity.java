@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     private void flipImage(){
 
         // surfaceViewから手書き画像を取得
-        Bitmap bmp = _surfaceView.getBitmap();
+        Bitmap bmp = _surfaceView.getBmpScreen();
 
         // Matに変換し、openCVで画像処理を実行
         Mat img = new Mat();
@@ -174,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
         // 輪郭を取得
         Mat hierarchy = new Mat();
         List<MatOfPoint> contours = new ArrayList<>();
-        //Imgproc.findContours(dst_bin, contours, hierarchy, Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_NONE);
         Imgproc.findContours(dst_bin, contours, hierarchy, Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_TC89_KCOS);
 
         List<MatOfPoint> approxContours = new ArrayList<>();
@@ -188,8 +187,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Mat res = new Mat(img.size(), img.type());
-        //Mat res = img.clone();
-        //Imgproc.drawContours(res, contours, -1, new Scalar(255, 0, 0, 255), 10);
         Imgproc.drawContours(res, approxContours, -1, new Scalar(0, 255, 0, 255), 10);
 
         // Mat -> Bitmapに変換

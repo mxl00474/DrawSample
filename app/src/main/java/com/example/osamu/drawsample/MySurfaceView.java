@@ -138,6 +138,8 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
         return bmp;
     }
 
+    public Bitmap getBmpScreen() { return bmpScreen; }
+
     public void clearScreen() {
 
         initCanvas();
